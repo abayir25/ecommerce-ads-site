@@ -2,160 +2,248 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ad Commerce – E-Commerce Advertising Management</title>
-  <meta name="description" content="Amazon, Google, and Meta Ads management for scalable e-commerce growth.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>E-Commerce Advertising Management</title>
+  <meta name="description" content="Data-driven performance marketing for online stores. Scale revenue with optimized Amazon, Google & Meta Ads." />
+  <meta property="og:title" content="E-Commerce Advertising Management" />
+  <meta property="og:description" content="Amazon Ads, Google Ads, Meta Ads and analytics for measurable growth." />
+  <meta property="og:type" content="website" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-
-    body {
-      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-      background-color: #f9fbfd;
-      color: #1f2937;
-      line-height: 1.6;
+    :root{
+      --blue:#0d47a1; --blue-600:#1565c0; --blue-50:#f3f7ff;
+      --text:#0b1220; --muted:#5b7089; --white:#fff;
+      --shadow:0 12px 34px rgba(13,71,161,.14);
+      --line:#dbe6ff; --r:14px; --max:1120px;
     }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--blue-50);color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif}
+    a{color:var(--blue-600);text-decoration:none}
+    .container{max-width:var(--max);margin:0 auto;padding:24px}
 
-    header {
-      background: linear-gradient(90deg, #004aad, #007bff);
-      color: white;
-      text-align: center;
-      padding: 3rem 1rem;
+    /* NAV */
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;color:var(--blue)}
+    .mark{display:inline-flex;align-items:center;justify-content:center;
+      width:40px;height:40px;border-radius:12px;box-shadow:var(--shadow);flex:0 0 40px}
+    .brand span{letter-spacing:.2px}
+
+    .btn{background:var(--blue);color:#fff;border:none;padding:14px 20px;border-radius:999px;
+      font-weight:700;cursor:pointer;box-shadow:var(--shadow)}
+    .btn:hover{background:var(--blue-600)}
+    .btn.outline{background:#fff;color:var(--blue);border:1px solid var(--line)}
+
+    /* HERO */
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;padding:42px 0}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:#e8f1ff;border:1px solid #d9e7ff;
+      color:var(--blue-600);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700}
+    h1{font-size:44px;line-height:1.1;margin:14px 0 10px}
+    .lead{font-size:18px;line-height:1.6;color:var(--muted);max-width:68ch}
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:26px 0}
+    .kpi{background:#fff;border-radius:var(--r);padding:18px;text-align:center;box-shadow:var(--shadow)}
+    .kpi strong{display:block;font-size:26px;color:var(--blue)}
+    .panel{background:#fff;border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
+    .chips{margin-top:8px}
+    .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#f1f5ff;
+      color:#2a4ea3;border:1px solid #dee7ff;font-size:12px;margin:6px 6px 0 0}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+    .section{padding:32px 0}
+
+    /* CONTACT */
+    .contact-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 10px;color:var(--blue);font-size:18px;display:flex;align-items:center;gap:8px}
+    .card p{margin:0;color:#4c5a6b;line-height:1.6}
+    .icon{width:34px;height:34px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;
+      background:#e9f1ff;border:1px solid var(--line);color:var(--blue)}
+    .meta{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;font-size:14px;color:#6a7c90}
+
+    .footer{margin-top:40px;color:#789;text-align:center;padding:18px 0}
+
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr}
+      .kpis{grid-template-columns:repeat(2,1fr)}
+      .grid4{grid-template-columns:repeat(2,1fr)}
     }
-
-    header h1 {
-      font-size: 2.4rem;
-      font-weight: 700;
-    }
-
-    header p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-    }
-
-    section {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 2rem;
-      background: white;
-      border-radius: 14px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.05);
-    }
-
-    h2 {
-      color: #004aad;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      list-style: disc;
-      margin-left: 1.5rem;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
-    }
-
-    .contact-box {
-      background: #f4f7fb;
-      border-left: 4px solid #007bff;
-      padding: 1rem 1.5rem;
-      border-radius: 10px;
-    }
-
-    .contact-box h3 {
-      color: #004aad;
-      margin-bottom: 0.4rem;
-    }
-
-    a {
-      color: #007bff;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    footer {
-      background: #004aad;
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
+    @media (max-width:780px){
+      .grid3,.contact-wrap{grid-template-columns:1fr}
+      .grid4{grid-template-columns:1fr}
+      h1{font-size:36px}
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Ad Commerce</h1>
-    <p>E-Commerce Advertising Management</p>
-  </header>
+  <div class="container">
+    <!-- NAV -->
+    <nav class="nav">
+      <div class="brand">
+        <!-- Inline SVG LOGO -->
+        <span class="mark" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 40 40" role="img" aria-label="E-Commerce Ads Logo">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#0d47a1"/>
+                <stop offset="100%" stop-color="#3fa9ff"/>
+              </linearGradient>
+            </defs>
+            <!-- rounded background -->
+            <rect x="1.5" y="1.5" width="37" height="37" rx="11" fill="url(#g1)"/>
+            <!-- bars -->
+            <rect x="10" y="24" width="4" height="8" rx="1.5" fill="#ffffff" opacity="0.95"/>
+            <rect x="17" y="20" width="4" height="12" rx="1.5" fill="#eaf4ff" opacity="0.95"/>
+            <rect x="24" y="16" width="4" height="16" rx="1.5" fill="#d9ecff" opacity="0.95"/>
+            <!-- upward arrow -->
+            <path d="M10 26 L19 18 L23 20 L30 13" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M27 13 H30 V16" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <span>E-Commerce Ads</span>
+      </div>
+      <a class="btn" href="#contact">Get Proposal</a>
+    </nav>
 
-  <section>
-    <h2>Our Services</h2>
-    <ul>
-      <li><strong>Amazon Advertising</strong> – Sponsored Products, Brand Campaigns, Store Optimization</li>
-      <li><strong>Google Ads</strong> – Search, Shopping, and YouTube Ads</li>
-      <li><strong>Meta Ads</strong> – Facebook & Instagram Conversions and Retargeting</li>
-      <li><strong>Analytics & Optimization</strong> – Continuous performance scaling and ROAS improvements</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Why Work With Us?</h2>
-    <p>
-      We specialize in e-commerce growth through smart, data-driven ad strategies across Amazon, Google, and Meta.
-      Our results-oriented approach ensures high ROAS, improved brand visibility, and sustainable sales growth.
-    </p>
-  </section>
-
-  <section>
-    <h2>Our Process</h2>
-    <p>
-      From keyword research and campaign setup to scaling and reporting, we manage every step meticulously.
-      Amazon Ads, Meta Ads, and Google Ads all work together under one unified growth framework.
-    </p>
-  </section>
-
-  <section>
-    <h2>Onboarding</h2>
-    <p>
-      Our onboarding process starts with a full account audit, competitor analysis, and growth roadmap —
-      ensuring we launch campaigns tailored to your goals and brand strategy.
-    </p>
-  </section>
-
-  <section>
-    <h2>Contact</h2>
-    <div class="contact-grid">
-      <div class="contact-box">
-        <h3>📍 Address</h3>
-        <p>Kavacık Subayevleri Mah. Güzin Cad. No: 33/4 Keçiören / Ankara 06135 Turkey</p>
+    <!-- HERO -->
+    <header class="hero">
+      <div>
+        <span class="badge">Performance Marketing for Online Stores</span>
+        <h1>E-Commerce Advertising Management</h1>
+        <p class="lead">
+          We scale revenue with data-driven campaigns across <strong>Amazon</strong>, Google and Meta.
+          From prospecting to high-ROAS remarketing, we plan, launch and optimize ads that convert.
+        </p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px">
+          <a class="btn" href="mailto:sumeyramensur1@gmail.com?subject=Proposal%20Request%20-%20E-Commerce%20Ads">Request a Proposal</a>
+          <a class="btn outline" href="#services">See Services</a>
+        </div>
+        <div class="kpis">
+          <div class="kpi"><strong>3×+</strong>ROAS Focus</div>
+          <div class="kpi"><strong>50+</strong>Stores Scaled</div>
+          <div class="kpi"><strong>10M+</strong>Ad Spend Managed</div>
+          <div class="kpi"><strong>24/7</strong>Tracking & Alerts</div>
+        </div>
       </div>
 
-      <div class="contact-box">
-        <h3>✉️ Email</h3>
-        <p><a href="mailto:sumeyramensur1@gmail.com">sumeyramensur1@gmail.com</a></p>
+      <div class="panel">
+        <h3 style="margin:0 0 8px;color:var(--blue)">Channels</h3>
+        <div class="chips">
+          <span class="chip">Amazon Ads</span>
+          <span class="chip">Google Ads</span>
+          <span class="chip">Performance Max</span>
+          <span class="chip">Meta Ads</span>
+          <span class="chip">Remarketing</span>
+          <span class="chip">Feed Optimization</span>
+          <span class="chip">Analytics</span>
+        </div>
       </div>
+    </header>
 
-      <div class="contact-box">
-        <h3>🔗 LinkedIn</h3>
-        <p><a href="https://www.linkedin.com/in/sumeyramensur/" target="_blank">linkedin.com/in/sumeyramensur</a></p>
+    <!-- WHY / HOW / ONBOARDING — Amazon-focused -->
+    <section class="section">
+      <div class="grid3">
+        <div class="panel">
+          <h2>Why Work With Us?</h2>
+          <ul style="margin:8px 0 0 18px;color:var(--muted)">
+            <li><strong>Retail-readiness first:</strong> Title, bullets, A+ Content, images & reviews to boost CTR and CVR on Amazon PDPs.</li>
+            <li><strong>Buy Box & price awareness:</strong> Bids adapt to stock levels, price changes and Buy Box status.</li>
+            <li><strong>Defend & Conquest:</strong> Brand/category defense + ASIN & competitor conquesting for incremental share.</li>
+            <li><strong>TACoS-driven growth:</strong> Balanced PPC & organic tactics to scale revenue efficiently.</li>
+            <li><strong>Audience expansion:</strong> Amazon DSP for retargeting, in-market and lifestyle audiences.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Our Process</h2>
+          <ul style="margin:8px 0 0 18px;color:var(--muted)">
+            <li><strong>Query mining:</strong> Search term harvesting → negatives, ASIN targeting, category refinements.</li>
+            <li><strong>Smart structures:</strong> Sponsored Products/Brands/Display with SKU-level budgets & placement bid mods.</li>
+            <li><strong>Day-parting & budgets:</strong> Marketing Stream insights guide hourly bids and pacing.</li>
+            <li><strong>Creative & Storefront:</strong> Ad creatives, Brand Store paths and video assets tested for CTR/AOV uplift.</li>
+            <li><strong>Attribution:</strong> Amazon Attribution to measure off-Amazon (Google/Meta) impact on Amazon sales.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>Onboarding</h2>
+          <ul style="margin:8px 0 0 18px;color:var(--muted)">
+            <li><strong>Audit:</strong> Catalog health, retail readiness, Buy Box, inventory & performance baselines.</li>
+            <li><strong>KPIs & targets:</strong> ROAS/ACOS/TACoS, CPR, CTR & CVR goals aligned with margin realities.</li>
+            <li><strong>Setup:</strong> Campaign frameworks, negatives, product groupings, placements & DSP plan.</li>
+            <li><strong>Measurement:</strong> Brand Analytics, Attribution tags, and weekly KPI dashboards.</li>
+            <li><strong>First 14–30 days:</strong> Rapid tests (keywords, ASINs, creatives), scale winners, prune waste.</li>
+          </ul>
+        </div>
       </div>
+    </section>
 
-      <div class="contact-box">
-        <h3>📞 Phone</h3>
-        <p><a href="tel:+905445760281">+90 544 576 0281</a></p>
+    <!-- SERVICES -->
+    <section id="services" class="section">
+      <h2>Our Services</h2>
+      <div class="grid4">
+        <div class="panel">
+          <h3>Amazon Advertising</h3>
+          <p style="color:var(--muted)">
+            End-to-end Amazon Ads management: <strong>Sponsored Products</strong>, <strong>Sponsored Brands</strong>,
+            <strong>Sponsored Display</strong> & <strong>Amazon DSP</strong>. Search term mining, ASIN targeting,
+            category defense/conquest, PDP optimization, Brand Store strategy and <strong>Amazon Attribution</strong>.
+          </p>
+        </div>
+        <div class="panel">
+          <h3>Google Ads & PMax</h3>
+          <p style="color:var(--muted)">Shopping & PMax structure, negative keywords, budget allocation and profitable scale.</p>
+        </div>
+        <div class="panel">
+          <h3>Meta Ads</h3>
+          <p style="color:var(--muted)">Creative testing, audience building and lifecycle remarketing strategies.</p>
+        </div>
+        <div class="panel">
+          <h3>Insights & Reporting</h3>
+          <p style="color:var(--muted)">Product-level ROAS, AOV & LTV dashboards with transparent weekly insights.</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <footer>
-    <p>© 2025 Ad Commerce | E-Commerce Advertising & Performance Marketing</p>
-  </footer>
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p class="lead">Ready to grow? Choose a channel below and we’ll get back with a tailored plan.</p>
+
+      <div class="contact-wrap">
+        <!-- Email -->
+        <div class="card">
+          <h3><span class="icon">📧</span> Email</h3>
+          <p>For proposals or general inquiries:</p>
+          <p class="meta">
+            <a href="mailto:sumeyramensur1@gmail.com"><strong>sumeyramensur1@gmail.com</strong></a>
+          </p>
+        </div>
+
+        <!-- Social -->
+        <div class="card">
+          <h3><span class="icon">🌐</span> Social Media</h3>
+          <p>Professional updates & marketing insights:</p>
+          <p class="meta">
+            <a href="https://www.linkedin.com/in/sumeyramensur/" target="_blank" rel="noopener">
+              <strong>linkedin.com/in/sumeyramensur</strong>
+            </a>
+          </p>
+        </div>
+
+        <!-- Address -->
+        <div class="card">
+          <h3><span class="icon">📍</span> Address</h3>
+          <p>Office location:</p>
+          <p class="meta">
+            KAVACIK SUBAYEVLERI MAH. GUZIN CAD.<br>
+            NO 33/4 KECIOREN / ANKARA 06135 Turkey
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>© <span id="y"></span> E-Commerce Advertising Management • All rights reserved.</small>
+    </footer>
+  </div>
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
 </body>
 </html>
