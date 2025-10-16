@@ -4,58 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>E-Commerce Advertising Management</title>
-  <meta name="description" content="Data-driven performance marketing for online stores. Scale revenue with Google and Meta campaigns." />
+  <meta name="description" content="Data-driven performance marketing for online stores. Scale revenue with optimized Google & Meta Ads campaigns." />
   <meta property="og:title" content="E-Commerce Advertising Management" />
-  <meta property="og:description" content="Data-driven performance marketing for online stores. Scale your business with optimized Google & Meta Ads campaigns." />
+  <meta property="og:description" content="Data-driven performance marketing for online stores. Scale with Google & Meta Ads." />
   <meta property="og:type" content="website" />
   <style>
     :root{
       --blue:#0d47a1; --blue-600:#1565c0; --blue-50:#f3f7ff;
       --text:#0b1220; --muted:#5b7089; --white:#fff;
-      --shadow:0 10px 30px rgba(13,71,161,.12);
-      --r:14px; --max:1080px;
+      --shadow:0 12px 34px rgba(13,71,161,.14);
+      --line:#dbe6ff; --r:14px; --max:1120px;
     }
     *{box-sizing:border-box}
-    html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif;color:var(--text);background:var(--blue-50)}
+    html,body{margin:0;padding:0;background:var(--blue-50);color:var(--text);
+      font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif}
     a{color:var(--blue-600);text-decoration:none}
     .container{max-width:var(--max);margin:0 auto;padding:24px}
+    /* NAV */
     .nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
     .brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--blue)}
-    .logo{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--blue),#3fa9ff);box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900}
-    .btn{background:var(--blue);color:#fff;border:none;padding:14px 20px;border-radius:999px;font-weight:700;cursor:pointer;box-shadow:var(--shadow)}
+    .logo{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--blue),#3fa9ff);
+      box-shadow:var(--shadow);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900}
+    .btn{background:var(--blue);color:#fff;border:none;padding:14px 20px;border-radius:999px;
+      font-weight:700;cursor:pointer;box-shadow:var(--shadow)}
     .btn:hover{background:var(--blue-600)}
-    .btn.outline{background:#fff;color:var(--blue);border:1px solid #cfe1ff}
+    .btn.outline{background:#fff;color:var(--blue);border:1px solid var(--line)}
+    /* HERO */
     .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;padding:42px 0}
-    .badge{display:inline-flex;gap:8px;align-items:center;background:#e8f1ff;border:1px solid #d9e7ff;color:var(--blue-600);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700}
+    .badge{display:inline-flex;gap:8px;align-items:center;background:#e8f1ff;border:1px solid #d9e7ff;
+      color:var(--blue-600);padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700}
     h1{font-size:44px;line-height:1.1;margin:14px 0 10px}
-    .lead{font-size:18px;line-height:1.6;color:var(--muted);max-width:65ch}
+    .lead{font-size:18px;line-height:1.6;color:var(--muted);max-width:68ch}
     .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:26px 0}
     .kpi{background:#fff;border-radius:var(--r);padding:18px;text-align:center;box-shadow:var(--shadow)}
     .kpi strong{display:block;font-size:26px;color:var(--blue)}
     .panel{background:#fff;border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
     .chips{margin-top:8px}
-    .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#f1f5ff;color:#2a4ea3;border:1px solid #dee7ff;font-size:12px;margin:6px 6px 0 0}
+    .chip{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#f1f5ff;
+      color:#2a4ea3;border:1px solid #dee7ff;font-size:12px;margin:6px 6px 0 0}
     .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .section{padding:32px 0}
-    .footer{margin-top:30px;color:#789;text-align:center;padding:18px 0}
-    .contact{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
-    .pill{padding:12px 16px;border:1px solid #dbe6ff;border-radius:10px;background:#fff}
-    @media (max-width:920px){
-      .hero{grid-template-columns:1fr}
-      h1{font-size:36px}
-      .grid3{grid-template-columns:1fr}
-      .kpis{grid-template-columns:repeat(2,1fr)}
-    }
+    /* CONTACT (revamped) */
+    .contact-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 10px;color:var(--blue);font-size:18px;display:flex;align-items:center;gap:8px}
+    .card p{margin:0;color:#4c5a6b;line-height:1.6}
+    .icon{width:34px;height:34px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;
+      background:#e9f1ff;border:1px solid var(--line);color:var(--blue)}
+    .meta{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;font-size:14px;color:#6a7c90}
+    .footer{margin-top:40px;color:#789;text-align:center;padding:18px 0}
+    @media (max-width:980px){.hero{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:780px){.grid3,.contact-wrap{grid-template-columns:1fr} h1{font-size:36px}}
   </style>
 </head>
 <body>
   <div class="container">
     <!-- NAV -->
     <nav class="nav">
-      <div class="brand">
-        <div class="logo">EA</div>
-        <span>E-Commerce Ads</span>
-      </div>
+      <div class="brand"><div class="logo">EA</div><span>E-Commerce Ads</span></div>
       <a class="btn" href="#contact">Get Proposal</a>
     </nav>
 
@@ -65,8 +71,8 @@
         <span class="badge">Performance Marketing for Online Stores</span>
         <h1>E-Commerce Advertising Management</h1>
         <p class="lead">
-          We scale revenue with data-driven Google and Meta campaigns.
-          From prospecting to high-ROAS remarketing — we plan, launch, and optimize ads that convert.
+          We scale revenue with data-driven Google & Meta campaigns. From prospecting to high-ROAS remarketing,
+          we plan, launch and optimize ads that convert.
         </p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:18px">
           <a class="btn" href="mailto:sumeyramensur1@gmail.com?subject=Proposal%20Request%20-%20E-Commerce%20Ads">Request a Proposal</a>
@@ -100,8 +106,8 @@
           <h2>Why Work With Us?</h2>
           <ul style="margin:8px 0 0 18px;color:var(--muted)">
             <li>Full-funnel strategy from cold traffic to repeat buyers.</li>
-            <li>Action-oriented weekly performance reports.</li>
-            <li>GA4, Pixel & Conversion tracking validation.</li>
+            <li>Actionable weekly reports and clear next steps.</li>
+            <li>GA4, Pixel & conversion tracking verification.</li>
           </ul>
         </div>
         <div class="panel">
@@ -109,15 +115,15 @@
           <ul style="margin:8px 0 0 18px;color:var(--muted)">
             <li>Audit → Plan → Test → Scale framework.</li>
             <li>Creative testing & product feed optimization.</li>
-            <li>ROAS/CPA targets defined and tracked collaboratively.</li>
+            <li>ROAS / CPA targets agreed and monitored.</li>
           </ul>
         </div>
         <div class="panel">
           <h2>Onboarding</h2>
           <ul style="margin:8px 0 0 18px;color:var(--muted)">
-            <li>Access setup & tracking verification.</li>
-            <li>Baseline metrics and ad budget planning.</li>
-            <li>First 14 days focused on quick wins.</li>
+            <li>Access setup & tracking checks (GA4, pixels).</li>
+            <li>Baseline metrics and budget plan.</li>
+            <li>First 14-day sprint focused on quick wins.</li>
           </ul>
         </div>
       </div>
@@ -129,7 +135,7 @@
       <div class="grid3">
         <div class="panel">
           <h3>Google Ads & PMax</h3>
-          <p style="color:var(--muted)">Shopping & PMax structure, negative keywords, budget allocation and profitable scaling.</p>
+          <p style="color:var(--muted)">Shopping & PMax structure, negative keywords, budget allocation and profitable scale.</p>
         </div>
         <div class="panel">
           <h3>Meta Ads</h3>
@@ -137,19 +143,46 @@
         </div>
         <div class="panel">
           <h3>Insights & Reporting</h3>
-          <p style="color:var(--muted)">Product-level ROAS, AOV and LTV analytics with transparent weekly dashboards.</p>
+          <p style="color:var(--muted)">Product-level ROAS, AOV & LTV dashboards with transparent weekly insights.</p>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- CONTACT (revamped with titled cards & icons) -->
     <section id="contact" class="section">
       <h2>Contact</h2>
-      <p class="lead">Ready to grow? Let's discuss your store’s performance plan.</p>
-      <div class="contact">
-        <a class="pill" href="mailto:sumeyramensur1@gmail.com">sumeyramensur1@gmail.com</a>
-        <a class="pill" href="https://www.linkedin.com/in/sumeyramensur/" target="_blank" rel="noopener">linkedin.com/in/sumeyramensur</a>
-        <span class="pill">KAVACIK SUBAYEVLERI MAH. GUZIN CAD. NO 33/4 KECIOREN / ANKARA 06135 Turkey</span>
+      <p class="lead">Ready to grow? Choose a channel below and we’ll get back with a tailored plan.</p>
+
+      <div class="contact-wrap">
+        <!-- Email -->
+        <div class="card">
+          <h3><span class="icon">📧</span> Email</h3>
+          <p>For proposals or general inquiries:</p>
+          <p class="meta">
+            <a href="mailto:sumeyramensur1@gmail.com"><strong>sumeyramensur1@gmail.com</strong></a>
+          </p>
+        </div>
+
+        <!-- Social -->
+        <div class="card">
+          <h3><span class="icon">🌐</span> Social Media</h3>
+          <p>Professional updates & marketing insights:</p>
+          <p class="meta">
+            <a href="https://www.linkedin.com/in/sumeyramensur/" target="_blank" rel="noopener">
+              <strong>linkedin.com/in/sumeyramensur</strong>
+            </a>
+          </p>
+        </div>
+
+        <!-- Address -->
+        <div class="card">
+          <h3><span class="icon">📍</span> Address</h3>
+          <p>Office location:</p>
+          <p class="meta">
+            KAVACIK SUBAYEVLERI MAH. GUZIN CAD.<br>
+            NO 33/4 KECIOREN / ANKARA 06135 Turkey
+          </p>
+        </div>
       </div>
     </section>
 
