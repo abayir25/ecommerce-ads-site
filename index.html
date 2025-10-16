@@ -8,6 +8,35 @@
   <meta property="og:title" content="E-Commerce Advertising Management" />
   <meta property="og:description" content="Amazon Ads, Google Ads, Meta Ads and analytics for measurable growth." />
   <meta property="og:type" content="website" />
+
+  <!-- schema.org for Payoneer & search engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Ad Commerce",
+    "url": "https://adcommerce.shop",
+    "logo": "https://adcommerce.shop/logo.png",
+    "email": "sumeyramensur1@gmail.com",
+    "telephone": "+905445760281",
+    "founder": {
+      "@type": "Person",
+      "name": "Sumeyra Mensur"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "KAVACIK SUBAYEVLERI MAH. GUZIN CAD. NO 33/4",
+      "addressLocality": "Kecioren",
+      "addressRegion": "Ankara",
+      "postalCode": "06135",
+      "addressCountry": "TR"
+    },
+    "sameAs": [
+      "https://www.linkedin.com/in/sumeyramensur/"
+    ]
+  }
+  </script>
+
   <style>
     :root{
       --blue:#0d47a1; --blue-600:#1565c0; --blue-50:#f3f7ff;
@@ -51,7 +80,7 @@
     .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
     .section{padding:32px 0}
 
-    /* CONTACT */
+    /* CONTACT + ABOUT */
     .contact-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
     .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
     .card h3{margin:0 0 10px;color:var(--blue);font-size:18px;display:flex;align-items:center;gap:8px}
@@ -59,6 +88,10 @@
     .icon{width:34px;height:34px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;
       background:#e9f1ff;border:1px solid var(--line);color:var(--blue)}
     .meta{margin-top:12px;border-top:1px dashed var(--line);padding-top:12px;font-size:14px;color:#6a7c90}
+    .avatar{width:78px;height:78px;border-radius:14px;border:1px solid var(--line);object-fit:cover}
+
+    .about{display:grid;grid-template-columns:1.2fr 1fr;gap:18px}
+    .about h2{margin-top:0}
 
     .footer{margin-top:40px;color:#789;text-align:center;padding:18px 0}
 
@@ -66,6 +99,7 @@
       .hero{grid-template-columns:1fr}
       .kpis{grid-template-columns:repeat(2,1fr)}
       .grid4{grid-template-columns:repeat(2,1fr)}
+      .about{grid-template-columns:1fr}
     }
     @media (max-width:780px){
       .grid3,.contact-wrap{grid-template-columns:1fr}
@@ -96,7 +130,7 @@
             <path d="M27 13 H30 V16" fill="none" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </span>
-        <span>E-Commerce Ads</span>
+        <span>Ad Commerce</span>
       </div>
       <a class="btn" href="#contact">Get Proposal</a>
     </nav>
@@ -199,15 +233,27 @@
       </div>
     </section>
 
-    <!-- ABOUT (Yeni) -->
+    <!-- ABOUT -->
     <section id="about" class="section">
-      <div class="panel">
-        <h2>About Ad Commerce</h2>
-        <p class="lead">
-          <strong>Ad Commerce</strong> is a digital marketing consultancy managed by <strong>Sumeyra Mensur</strong>,
-          specializing in Amazon, Google and Meta advertising for e-commerce brands. We focus on data-driven growth,
-          campaign optimization, and transparent reporting to help online stores scale profitably.
-        </p>
+      <div class="about">
+        <div class="panel">
+          <h2>About Ad Commerce</h2>
+          <p class="lead">Ad Commerce is led by <strong>Sumeyra Mensur</strong> — a performance marketing specialist focused on Amazon Ads, Google Ads (Shopping/PMax) and Meta Ads. We combine retail-readiness with data-driven campaign structures to achieve sustainable, measurable growth.</p>
+          <ul style="margin:12px 0 0 18px;color:var(--muted)">
+            <li>Clear KPIs: ROAS/ACOS/TACoS, CPR, CTR, CVR targets aligned with margin realities.</li>
+            <li>Transparent reporting: SKU-level insights and weekly dashboards.</li>
+            <li>Cross-channel thinking: Off-Amazon to Amazon with <strong>Amazon Attribution</strong>.</li>
+          </ul>
+        </div>
+        <div class="panel">
+          <h2>How We Work</h2>
+          <ul style="margin:0 0 0 18px;color:var(--muted)">
+            <li>Audit → Strategy → Build → Test → Scale loop.</li>
+            <li>Retail-readiness + campaign architecture in parallel.</li>
+            <li>Rapid testing in the first 14–30 days; scale winners, prune waste.</li>
+            <li>Ongoing optimization: bids, placements, queries, DSP audiences.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -217,12 +263,36 @@
       <p class="lead">Ready to grow? Choose a channel below and we’ll get back with a tailored plan.</p>
 
       <div class="contact-wrap">
+
+        <!-- Owner / Picture (Payoneer “picture” requirement) -->
+        <div class="card">
+          <h3><span class="icon">👤</span> Owner</h3>
+          <p><strong>Sumeyra Mensur</strong><br/>Founder & Performance Marketing Lead</p>
+          <p class="meta" style="display:flex;align-items:center;gap:12px">
+            <!-- FOTOĞRAFINI projeye owner.jpg olarak ekleyin. İstediğiniz ad olursa src'yi güncelleyin. -->
+            <img src="owner.jpg" alt="Sumeyra Mensur" class="avatar">
+            <span>
+              Ad Commerce — Ankara, Turkey<br>
+              <a href="mailto:sumeyramensur1@gmail.com">sumeyramensur1@gmail.com</a>
+            </span>
+          </p>
+        </div>
+
         <!-- Email -->
         <div class="card">
           <h3><span class="icon">📧</span> Email</h3>
           <p>For proposals or general inquiries:</p>
           <p class="meta">
             <a href="mailto:sumeyramensur1@gmail.com"><strong>sumeyramensur1@gmail.com</strong></a>
+          </p>
+        </div>
+
+        <!-- Phone -->
+        <div class="card">
+          <h3><span class="icon">📞</span> Phone</h3>
+          <p>Let’s talk about your goals:</p>
+          <p class="meta">
+            <a href="tel:+905445760281"><strong>+90 544 576 02 81</strong></a>
           </p>
         </div>
 
@@ -246,23 +316,16 @@
             NO 33/4 KECIOREN / ANKARA 06135 Turkey
           </p>
         </div>
-
-        <!-- Phone (daha önce eklenmişti) -->
-        <div class="card">
-          <h3><span class="icon">📞</span> Phone</h3>
-          <p>Call or WhatsApp:</p>
-          <p class="meta">
-            <a href="tel:+905445760281"><strong>+90 544 576 02 81</strong></a>
-          </p>
-        </div>
       </div>
     </section>
 
-    <!-- FOOTER (güncel) -->
     <footer class="footer">
       <small>
-        © <span id="y"></span> Ad Commerce — Managed by <strong>Sumeyra Mensur</strong> • Ankara, Turkey
-        | <a href="mailto:sumeyramensur1@gmail.com">sumeyramensur1@gmail.com</a>
+        © <span id="y"></span> Ad Commerce — Managed by <strong>Sumeyra Mensur</strong> •
+        <a href="mailto:sumeyramensur1@gmail.com">sumeyramensur1@gmail.com</a> •
+        <a href="tel:+905445760281">+90 544 576 02 81</a> •
+        KAVACIK SUBAYEVLERI MAH. GUZIN CAD. NO 33/4, Kecioren, Ankara 06135, TR •
+        <a href="https://www.linkedin.com/in/sumeyramensur/" target="_blank" rel="noopener">LinkedIn</a>
       </small>
     </footer>
   </div>
