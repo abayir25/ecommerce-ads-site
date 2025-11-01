@@ -1,0 +1,67 @@
+<!doctype html><html lang="tr"><head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>RFQ / Onboarding • YourCompany</title>
+<link rel="stylesheet" href="assets/css/style.css"/>
+</head><body>
+<div class="container">
+  <nav><div><a href="/">YourCompany</a></div><div><a href="/index.html">Ana Sayfa</a></div></nav>
+
+  <main class="section" style="max-width:760px;margin:0 auto">
+    <h1>RFQ / Onboarding</h1>
+    <p class="lead">Bilgilerinizi paylaşın; 48 saat içinde dönüş sağlıyoruz.</p>
+
+    <form id="rfq">
+      <div class="row">
+        <label>Sizi nasıl tanımlayalım?
+          <select name="partnerType" required>
+            <option>Brand</option><option>Distributor</option><option>Wholesaler</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="row cols-2">
+        <label>Şirket (legal)<input name="companyName" required></label>
+        <label>Web sitesi<input name="website" placeholder="https://..."></label>
+      </div>
+
+      <div class="row cols-3">
+        <label>Eyalet<input name="state" required></label>
+        <label>EIN<input name="ein" required></label>
+        <label>Telefon<input name="phone"></label>
+      </div>
+
+      <div class="row cols-2">
+        <label>Ad Soyad<input name="contactName" required></label>
+        <label>E-posta<input type="email" name="email" required></label>
+      </div>
+
+      <div class="row cols-2">
+        <label>MAP politikası var mı?
+          <select name="hasMap"><option>Yes</option><option>No</option></select>
+        </label>
+        <label>Notlar / Katalog linki<input name="notes"></label>
+      </div>
+
+      <div class="row">
+        <button type="submit">Gönder</button>
+        <p class="muted">Belgeler: <a href="/docs/W9.pdf">W-9</a> • <a href="/docs/ResaleCertificate.pdf">Resale Certificate</a> • <a href="/policies/map.html">MAP</a></p>
+      </div>
+    </form>
+
+    <script>
+      const form = document.getElementById('rfq');
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const data = Object.fromEntries(new FormData(form).entries());
+        const res = await fetch('/api/rfq', {
+          method:'POST',
+          headers:{'content-type':'application/json'},
+          body: JSON.stringify(data)
+        });
+        if(res.ok){ alert('Başvurunuz alındı. Teşekkürler!'); form.reset(); }
+        else{ alert('Gönderilemedi. Lütfen tekrar deneyin.'); }
+      });
+    </script>
+  </main>
+</div>
+</body></html>
